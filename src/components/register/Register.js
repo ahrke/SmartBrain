@@ -43,11 +43,11 @@ class Register extends React.Component {
 				password: password
 			})
 		})
-			.then(response => response.json)
+			.then(response => response.json())
 			.then(user => {
 				if(user){
 					this.props.loadUser(user);
-					alert('congratulations! welcome to the site!');
+					alert(`congratulations ${user.name}! welcome to the site!`);
 					this.props.onRouteChange('home');
 				}
 			})
