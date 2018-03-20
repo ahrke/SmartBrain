@@ -32,6 +32,10 @@ class Register extends React.Component {
 
 	onSubmitButton = () => {
 		const { name, email, password } = this.state;
+		if(!name || !email || !password) {
+			alert('Please fill in all fields')
+			return;
+		}
 		fetch('http://localhost:3000/register', {
 			method: 'post',
 			headers: {
